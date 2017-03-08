@@ -1,0 +1,88 @@
+Como se que rutas están accesibles en mi aplicación?
+
+Son las que están en config/routes.rb, las cuales igual pueden revisarse con "routes" en la terminal de rails o en el browser mientras el servidor está corriendo con "http://localhost:3000/rails/info/routes"
+
+Como se que Paths o URL helpers rails crea para mis rutas y como personalizarlos?
+
+Se crean automaticamente al usar resources: y se puede usar :controller para cambiar el controller que se utiliza, as: para los helpers y path_names: para el nombre del path. igualmente se pueden poner restricciones en cada resources:
+
+Que hace y para que sirve el método resourses en mi archivo de rutas?
+
+genera una conexión entre los verbos de HTTP y los URLs que controlan acciones, generando asì 7 rutas que están conectadas con el controlador especificado. las rutas tienen las acciones prinipales de CRUD
+
+Como puedo saber que rutas crea el método resourses?
+
+poniendo "routes" en la terminal o en el browser mientras el servidor está corriendo con "http://localhost:3000/rails/info/routes"
+
+Como especifico cual quiero que sea la root Url de mi aplicación?
+
+con el método root, sólo puede usarse peticiones GET con el root.
+
+Que son nested resources y para que me sirven?
+
+Son resources que están relacionadas con una relación padre-hija, sirven para generar rutas más específicas y accesar rutas de una manera más rápida.
+
+Que son member routes y collection routes
+
+member routes son rutas que puedes crear y con las cuales puedes usar cualquier petición que se crea con resources y las collection routes son parecidas pero igualmente se puede accesar la accioón con el mismo nombre en el controlador.
+
+#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#
+
+Cuales son por default los métodos o acciones que espera rails para un recurso CRUD. A que corresponde cada una de estas acciones conceptualmente?
+
+#index, se usa para mostrar una lista de todos los objetos 
+#new, regresa una forma HTML para crear un nuevo objeto
+#create, crea un nuevo objeto
+#show muestra un objeto en específico
+#edit regresa una forma HTML para editar un objeto
+#update actualiza un objeto específico
+#delete elimina un objeto específico
+
+Como se definen los before_filters y como defines que acciones utilizarán dicho filtro?
+
+Con before_action ó skip_before_action, la accion que deberán realizar se especifica en un método dentro de la misma clase.
+
+Como funcionan las sessiones en Rails y las coockies?
+
+Las sesiones son data que persiste entre peticiones y normalemente se utiliza para que persista la información de un usuario, dicha información se guarda en una cookie, la cual no es muy grande.
+
+Rails tiene una gran manera para desplegar errores en la vista, como funciona esto?
+
+con el Flash, que se restablece entre peticiones, pero puede ser útil para desplegar infomación de una petición a otra, por ejemplo, si ocurre un error en la petición anterior, el Flash alamcenará el mensaje de error y podrá desplegarse en la siguiente petición.
+
+Finalmente que es Strong Parameters y como se utilizan?
+
+con estos los controladores de acción no se les permite realizar actualizaciones en masa, hasta que se les de "permiso", esto ayuda a la seguridad de la aplicación, ya que prohibe que se actualizen objetos accidentalmente.
+
+#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#
+
+Vistas
+
+Como decide Rails que vista debe renderar si no se espesifica una?
+
+automáticamente busca el action_name.html.erb en la carpeta de vistas del controlador.
+
+Como puedo pasar variables a una vista o partial?
+
+
+
+Que convenciones tienen los partials?
+
+
+
+Como se hace render de vistas en otros formatos como JSON o Javascript?
+
+
+
+Como se manejan los layouts en Rails?
+
+
+
+Helpers
+
+Como funciona link_to y que posibles argumentos acepta.
+Intenta crear tu propia implementación de este método, de esta manera comprenderás como funcionan.
+Como funciona image_tag y donde deben de ir guardadas las imágenes para que funcione correctamente esta sintaxis.
+Como funciona form_for y como creas un nuevo objeto o como editas un nuevo objeto.
+Como funcionan las validaciones ahora y que beneficios tienes?
+Hay alguna forma de crear formas para un modelo que esta relacionado con otro?
