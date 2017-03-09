@@ -1,0 +1,19 @@
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+ 
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<h2>Questions</h2>
+<%= render @user.questions %>
+  
+<h2>Make a Question:</h2>
+<%= render 'questions/form' %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+
+<%= link_to 'Go Back', users_path %>
