@@ -1,7 +1,39 @@
-<body class= "container">
 <h1>Welcome to Kuora!</h1>
 
-<%= link_to 'List all users', controller: 'users' %>
+<%if logged_in?%>
+<h2>You are logged in as <%= current_user.username %></h2>
+<%end%>
 
+<%if logged_in?%>
 
-<body>
+<ul>
+
+<p>
+<%= link_to 'Your profile', current_user %>
+</p>
+
+<p>
+<%= link_to 'Show all users', controller: 'users' %>
+</p>
+
+<p>
+<%= link_to 'Logout', logout_path, method: 'delete' %>
+</p>
+
+</ul>
+
+<%else%>
+
+<ul>
+
+<p>
+ <%= link_to 'Login', login_path%>
+</p>
+
+<p>
+ <%= link_to 'Create new Account', new_user_path %>
+</p>
+
+</ul>
+
+<%end%>

@@ -1,0 +1,15 @@
+<h1>Answer a question!</h1>
+
+  <p>
+    <strong>Questions:</strong>
+    <% @questions.each do |question|%>
+    <%if question.user_id != current_user.id%>
+    <p id = "questions">
+    <%= link_to question.question, polymorphic_url(question)%> 
+    </p>
+    <%end%>
+    <%end%>
+  </p>
+
+
+<p id="back"> <%= link_to 'Go Back', current_user %></p>

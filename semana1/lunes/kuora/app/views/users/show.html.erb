@@ -1,19 +1,20 @@
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
- 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<%if current_user.username == @user.username%>
+<h2> Welcome <%= @user.username %>!</h2>
+<%else%>
+<h2><%= @user.username %>'s profile</h2>
+<%end%>
 
-<h2>Questions</h2>
-<%= render @user.questions %>
+<h3><%= @user.email %></h3>
+
+<ul>
+<p><%= link_to 'Ask a question', new_user_question_path(@user) %> </p>
+
+<p><%= link_to 'Answer a question', answer_one_path(@user)%> </p>
+
+<p><%= link_to 'Show your questions', user_questions_path(@user) %> </p>
+</ul>
   
-<h2>Make a Question:</h2>
-<%= render 'questions/form' %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@user) %> 
 
-<%= link_to 'Go Back', users_path %>
+<p id="back"> <%= link_to 'Go Back', root_url %> </p>

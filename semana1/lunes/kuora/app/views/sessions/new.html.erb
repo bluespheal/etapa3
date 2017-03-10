@@ -1,0 +1,15 @@
+<h1>Log in</h1>
+
+<ul>
+<%= form_for(:session, url: login_path) do |f| %> 
+  <br>  
+  <%= f.email_field :email, placeholder: "e-mail"%>
+
+  <%= f.password_field :password, placeholder: "password"%>
+
+  <%= f.submit "Log in" %>
+</ul>
+
+<% end %>
+
+<%= link_to 'Go Back', root_url %>

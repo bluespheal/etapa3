@@ -1,9 +1,12 @@
+
+<div id = "question">
 <%= form_for([@user, @user.questions.build]) do |f| %>
   <p>
     <%= f.label :question %><br>
-    <%= f.text_field :question %>
+    <%= f.text_area :question %>
   </p>
   <p>
     <%= f.submit %>
   </p>
 <% end %>
+</div>

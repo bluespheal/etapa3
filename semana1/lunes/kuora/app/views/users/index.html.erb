@@ -1,8 +1,12 @@
 <h1>This are all the users</h1>
 
-<p>
- <%= link_to 'Create new Account', new_user_path %>
-</p>
+
+
+<%if logged_in?%>
+
+<p>Hola!</p>
+
+<%end%>
 
 
 <table>
