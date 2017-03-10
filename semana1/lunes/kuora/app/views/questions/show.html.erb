@@ -1,9 +1,25 @@
 <h1>Answer this question!</h1>
 
-<p> <%=@question.question%> </p>
+<p id = "question"> <%=@question.question%> </p>
+
+<% @answers = Answer.where(question_id:@question.id)%>
+
+
+<% @answers.each_with_index do |answer, index| %>
+  <%if current_user.username == (User.find_by(id: answer.user_id)).username%>
+    <%user = "Your"%>
+  <%else%>
+    <%user = (User.find_by(id: answer.user_id)).username + "'s"%>
+  <%end%>
+
+  <p id= "answer"> <%=user%> answer: <%= answer.answer%> </p>
+<% end %>
 
 <div id = "form">
 <%= form_for([@question, @question.answers.build]) do |f| %>
+  <p>
+    <%= f.hidden_field :question_id, value: @question.id %>
+  </p>
   <p>
     <%= f.text_area :answer, placeholder: "Your answer"%>
   </p>
@@ -12,3 +28,5 @@
   </p>
 <% end %>
 </div>
+
+<p id="back"> <%= link_to 'Go Back', :back %></p>

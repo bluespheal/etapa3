@@ -4,9 +4,9 @@
     <strong>Questions:</strong>
     <% @questions.each do |question|%>
     <%if question.user_id != current_user.id%>
-    <p id = "questions">
-    <%= link_to question.question, polymorphic_url(question)%> 
-    </p>
+    <div id = "questions"><p>
+    <%= link_to question.question, polymorphic_url(question), id: "questionsnot"%> 
+    </p></div>
     <%end%>
     <%end%>
   </p>

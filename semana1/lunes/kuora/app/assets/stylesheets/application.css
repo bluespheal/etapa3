@@ -45,15 +45,15 @@ h3{
   background-color: #AAAAFF;
 }
 
-a:not(#questions){
-  border-radius:  20px; 
+a:not(#questionsnot){
+  border-radius:20px; 
   background-color: #DDEEFF;
   padding: 6px;
   text-decoration: none;
   color: black;
 }
 
-a:not(#questions):hover{
+a:not(#questionsnot):hover{
   background-color: #EEFFFF;
   box-shadow: 0 0 20px #FFFFFF;
 
@@ -71,12 +71,23 @@ ul > p{
 }
 
 #questions{
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #DDEEFF;
+  padding: 5px;
   text-decoration: none;
   color: black;
 }
-#questions:hover{
+
+#questionsnot{
+  background-color: #DDEEFF;
+  text-decoration: none;
+  color: black;
+}
+
+#questionsnot:hover{
   color: white;
-  text-shadow: 0 0 1px #FFFFFF;
+  text-shadow: 0 0 3px #000000;
 }
 
 #back{
@@ -90,7 +101,7 @@ ul > p{
   border-top-right-radius: 50px;
   border-top-left-radius: -50px;
 
-  padding: 15px;
+  padding: 10px;
 }
 
 #no_answer{
