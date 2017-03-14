@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+header {
+  background-color: black;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  width: 768px;
+  padding: 0px 20px 20px 20px;
+  /*border: 1px dotted black;*/
+}
+
+th {
+  text-align: left;
+}
+
+#image-1 {
+  position: relative;
+  top: 103px;
+  left: 58px;
+}
+
+#image-2 {
+  position: relative;
+  top: 103px;
+  left: 76px;
+}
+
+#image-3 {
+  position: relative;
+  top: 103px;
+  left: 94px;
+}
+
+div#slot-machine {
+  width: 406px;
+  height: 331px;
+  background: url("slot_machine.png") no-repeat;
+  margin: 0 auto;
+}
+
+#win {
+  position: relative;
+  top: 245px;
+  /*left: 170px;*/
+  color: #00e800;
+}
+
+form {
+  position: relative;
+  top: 331px;
+}
+
+#submit {
+  width: 406px;
+  height: 40px;
+  background-color: #1F8CD1;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}

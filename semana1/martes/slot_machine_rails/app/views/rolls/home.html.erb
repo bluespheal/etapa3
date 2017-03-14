@@ -1,0 +1,14 @@
+<header>
+  <%= image_tag "codea-logo.png", id: "logo" %>
+</header>
+
+<h1>Slot Machine</h1>
+
+<div id="slot-machine">
+  <%= form_for :roll, url: rolls_path, remote: true do |f| %>
+    <%= f.submit "SPIN", id: "submit" %>
+  <% end %>
+  <div id="die">
+    <%= render partial: "die_roll" %>
+  </div>
+</div>

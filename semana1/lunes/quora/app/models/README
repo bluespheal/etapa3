@@ -1,5 +1,0 @@
-Aquí deberás crear tus modelos
-
-Puedes utilizar el comando de rake: 
-
-rake generate:model NAME=User
