@@ -20,6 +20,5 @@ class RollsController < ApplicationController
 
     @win = "WINNER!!" if @rolls.map! { |roll| roll.value }.uniq.count == 1
 
-
   end
 end

@@ -11,6 +11,13 @@
     left: 85px;
 }
 
+.form{
+	position: relative;
+	left: 666px;
+	top: 222px;
+	display: inline;
+}
+
 .oven {
 	width: 768px;
 	visibility: hidden;
@@ -32,7 +39,7 @@
 	width: 145px;
 	height: 90px;
 	position: relative;
-	top: -54px;
+	top: 52px;
 	left: 309px;
 	border: 2px solid #999;
 }
