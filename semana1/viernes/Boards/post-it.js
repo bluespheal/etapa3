@@ -44,6 +44,7 @@ var Boarder = function( ){
       var iden= $(this).attr("id");
       $(".board").css("visibility","hidden");
       $("#board-"+iden).css("visibility","visible");
+
     });
   }
 
@@ -52,8 +53,7 @@ var Boarder = function( ){
 
 var Board = function( selector ) {
 
-  $("#whiteboard").append('<div class= "board" id="board-'+board_counter+'"><div/>');
-
+  $("#whiteboard").append('<div class= "board" id="board-'+board_counter+'" style= "background-color: #'+Math.floor(Math.random()*16777215).toString(16)+'; "><div/>');
 
   $(selector).dblclick(function(event) {
     alert(selector+ "///"+ this);
