@@ -1,0 +1,67 @@
+#board {
+  font-family: monospace;
+  background-color: #9e8d68;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  float: right;
+  width: 100%;
+  height: 103%;
+  
+
+}
+
+#boarder{
+  z-index: 1;
+  position: absolute;
+  border: 2px solid #BBBBBB;
+  float: left;
+  width: 150px;
+  height: 100%;
+  background-color: #DEDEDE;
+}
+
+#boarder > ul{  
+  position: relative;
+  list-style-type: none;
+  left: -20px;
+}
+
+.post-it {
+  position: absolute !important;
+  width: 160px;
+  background-color: yellow;
+  box-shadow: -2px 2px 5px #555;
+  overflow: hidden;
+}
+
+.post-it .header {
+  background-color: #c2c25b;
+  text-align: right;
+  padding: 2px;
+}
+
+.post-it .header:hover {
+  background-color: #a8a860;
+}
+
+.post-it .header a, .post-it .header a:visited {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.post-it .header a:hover {
+  color: #eee;
+}
+
+.post-it .header .close{
+  float:right;
+  width: 15px;
+}
+
+.post-it .content {
+  padding: 10px;
+  min-height: 70px;
+  outline: none;
+}
