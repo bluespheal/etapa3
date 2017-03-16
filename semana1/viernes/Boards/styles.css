@@ -10,6 +10,12 @@
   
 }
 
+#boards{
+  width: 160px;
+  position: relative;
+  left:-40px;
+}
+
 #boarder{
   z-index: 1;
   position: absolute;

@@ -30,13 +30,8 @@ var Boarder = function( ){
       $("#dialog").dialog("open");
   });
 
-  function initialize() {
-    $("#master").css("visibility", "hidden");
-
-  };
-
   function addBoard() {
-    $("#boards_list").append("<li class = 'boarder_li' id= '"+ board_counter +"'> "+ title.val() +" </li>")
+    $("#boards_list").append("<li contenteditable='true' class = 'boarder_li' id= '"+ board_counter +"'> "+ title.val() +" </li>")
     $("#whiteboard").append(new Board("#board-"+ board_counter));
     board_counter++;
     $(".boarder_li").on("click",function(event){
@@ -48,7 +43,6 @@ var Boarder = function( ){
     });
   }
 
-  initialize(); 
 };
 
 var Board = function( selector ) {
@@ -56,20 +50,25 @@ var Board = function( selector ) {
   $("#whiteboard").append('<div class= "board" id="board-'+board_counter+'" style= "background-color: #'+Math.floor(Math.random()*16777215).toString(16)+'; "><div/>');
 
   $(selector).dblclick(function(event) {
-    alert(selector+ "///"+ this);
     event.stopPropagation();
-    $(this).append(new PostIt);
+    $(selector).append(new PostIt(selector));
   });
 };
 
-var PostIt = function() {
+var PostIt = function( select) {
+  // var random = Math.floor(Math.random()* (16777215-14540253 +1)+14540253);
+  // var color = random.toString(16);
+  // var headercolor = (random - 986895).toString(16);
 
-  $(".board").append('<div id="master" class="post-it"><div class="header"><div class="close">X</div></div><div class="content">...</div></div>');
-  $(".post-it:last-child").css ({"left": event.pageX, "top": event.pageY});
+  $(select).append('<div id="master" class="post-it"><div class="header"><div class="close">X</div></div> <div class="content"></div></div>');
+  $(select+"> .post-it:last-child").css ({"left": event.pageX, "top": event.pageY});
   $(".content").attr('contenteditable', "true");
   $(".header").attr('contenteditable', "true");
 
-  
+  // $("#master:last-child > .content").attr('style', "background-color: #"+ color);
+  // $("#master:last-child > .header").attr('style', "background-color: #"+ headercolor);
+
+
   $(".close").mousedown(function() {
     $(this).parent().parent().remove();
   });
