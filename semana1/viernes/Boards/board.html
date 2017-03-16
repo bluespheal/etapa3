@@ -12,13 +12,25 @@
       <li>Boarder!</li>
       <li><button id= "new_board" > new Board</button></li>
       <li>Select a board</li>
+      <div id = "boards"> 
+        <ul id = "boards_list">
+        </ul>
+      </div>
   </ul>
   </div>
 
-  
-
-  <div id = "master_board">
+  <div id = "whiteboard" >
   </div>
+
+  <div id ="dialog" title="Create a new Board">
+    <form>
+      <fieldset class = "ui-helper-reset">
+        <label for= "board_title">Nombre del Board</label>
+        <input type="text" name="board_title" id= "board_title" placeholder= "Board Title" class= "ui-widget-content ui-corner-all" >
+      </fieldset>
+    </form>
+  </div>
+  
 
 
 
